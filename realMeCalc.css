@@ -1,0 +1,38 @@
+body{
+  background-color: black;
+}
+.buttons{
+  font-family: Arial;
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  background-color: rgb(41, 41, 41);
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.buttons1{
+  font-family: Arial;
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  background-color: rgb(80, 80, 80);
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.buttons2{
+  font-family: Arial;
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  background-color: rgb(0, 230, 0);
+  margin-right: 5px;
+  margin-bottom: 5px;
+}

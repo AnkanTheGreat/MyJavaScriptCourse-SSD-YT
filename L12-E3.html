@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>L12-E3</title>
+  </head>
+  <body>
+    <button onclick="
+        messages++;
+        displayNotification();
+      ">Add</button>
+    <button onclick="
+       if(messages > 0){
+       messages--;
+      if(messages===0){
+        stopNotification();
+      } 
+      }
+    ">Remove</button>
+    <script>
+      let messages = 2;
+      let intervalId;
+      let isDisplayingNotification;
+
+      displayNotification();
+
+      function displayNotification(){
+        if(isDisplayingNotification){
+          return;
+        }
+        isDisplayingNotification = true;
+        intervalId = setInterval(function(){
+        if(document.title === 'L12-E3'){
+          document.title = `(${messages}) New Messages`;
+        } else {
+          document.title = 'L12-E3';
+        }
+      }, 1000);
+    }
+
+    function stopNotification(){
+      isDisplayingNotification = false;
+
+      clearInterval(intervalId);
+      document.title = 'L12-E3';
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>L9-E5</title>
+  </head>
+  <body>
+    <input placeholder="Type something" class="js-input-text"
+    onkeyup="
+    const inputElement = document.querySelector('.js-input-text');
+    document.querySelector('.textOnThePage')
+    .innerHTML = inputElement.value;
+    ">
+    <p class="textOnThePage">text</p>
+  </body>
+</html>

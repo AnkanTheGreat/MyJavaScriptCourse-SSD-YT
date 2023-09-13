@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>L9-E3</title>
+  </head>
+
+  <body>
+    <input placeholder="Name" class="js-name-input"
+    onkeydown="
+    if(event.key === 'Enter'){
+       toReuseCode();
+    } 
+    ">
+    <button onclick="
+       toReuseCode();
+    ">Submit</button>
+
+    <p class="js-name"></p>
+    <script>
+      function toReuseCode(){
+        const myNameInput = document.querySelector('.js-name-input');
+
+        document.querySelector('.js-name')
+          .innerHTML = `Your name is ${myNameInput.value}`;
+
+      }
+    </script>
+  </body>
+</html>

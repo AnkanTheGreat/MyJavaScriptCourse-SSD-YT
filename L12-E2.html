@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>L12-E2</title>
+  </head>
+  <body>
+    <button onclick="
+    textAdded();
+    textRemoved();
+    " class="js-add-button">Add to cart</button>
+<p class="js-text"></p>
+
+    <script>
+      let timeoutId;
+      function textAdded() {
+      document.querySelector('.js-text')
+      .innerHTML = 'Added';
+    }
+
+    function textRemoved(){
+      const textRemoved =  document.querySelector('.js-text');
+      
+      clearTimeout(timeoutId);
+
+     timeoutId = setTimeout(function(){
+        textRemoved.innerHTML = '';
+      },2000);
+    }
+    </script>
+  </body>
+</html>

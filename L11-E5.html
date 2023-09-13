@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>L11-E5</title>
+  </head>  
+    <body>
+      <script>
+        findIndex(['green', 'red', 'blue', 'red'], 'red');
+       
+        function findIndex(array, word){
+        let index = -1;
+        for(let i=0; i<array.length; i++){
+          if(array[i] === word){
+           index = i;
+           break;
+          }
+        }
+        console.log(index);
+      }
+
+      function removeEgg(foods){
+        
+        const foodsCopy = foods.slice();
+        const reversedFoods = foodsCopy.reverse();
+
+        const result=[];
+        let eggsRemoved = 0;
+
+        for(let i=0; i<reversedFoods.length; i++){
+          if(foods[i] === 'egg' && eggsRemoved<2){
+            eggsRemoved++;
+            continue;
+          }
+          result.push(foods[i]);
+        }
+        return result.reverse();
+      }
+      const foods = ['egg', 'apple', 'egg', 'egg','ham'];
+      console.log(removeEgg(foods));
+      console.log(foods);
+      </script>
+    </body>
+</html>

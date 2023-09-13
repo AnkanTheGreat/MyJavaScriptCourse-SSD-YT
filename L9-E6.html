@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity</title>
+
+  </head>
+
+  <body>
+    <button onclick="
+      displayCartQuantity();
+      ">Show Quantity</button>
+
+    <button onclick="
+    updateCartQuantity(10,1);
+    ">Add to Cart</button>
+
+    <button onclick="
+    updateCartQuantity(9,2);
+    ">+2</button>
+
+    <button onclick="
+    updateCartQuantity(8,3);
+    ">+3</button>
+
+    <button onclick="
+    updateCartQuantity(7,4);
+    ">+4</button>
+
+    <button onclick="
+     updateCartQuantity(6,5);
+    ">+5</button>
+
+    <button onclick="
+    updateCartQuantity1(0,1);
+    ">Remove from cart</button>
+
+
+    <button onclick="
+     updateCartQuantity1(1,2);
+    ">-2</button>
+
+    <button onclick="
+     updateCartQuantity1(2,3);
+    ">-3</button>
+
+    <button onclick="
+      cartQuantity = 0;
+      console.log('Cart was reset');
+      console.log(`Cart quantity : ${cartQuantity}`);
+      displayCartQuantity();
+    ">Reset Cart</button>
+
+      
+    <p class="js-cart-quantity"></p>
+
+
+    <script>
+     let cartQuantity = 0;
+     displayCartQuantity();
+      
+      function updateCartQuantity(oneless, actual){
+        if(cartQuantity >= oneless){
+         alert('The cart is full');
+         }else{
+        cartQuantity = cartQuantity + actual;
+        console.log(`Cart quantity : ${cartQuantity}`);
+        localStorage.setItem('cartQuantity', cartQuantity);
+          }
+        }
+
+      function updateCartQuantity1(min,sub){
+        if(cartQuantity <= min){
+        alert('Not enough items in the cart');
+        }else{
+        cartQuantity = cartQuantity - sub;
+        console.log(`Cart quantity : ${cartQuantity}`);
+        localStorage.setItem('cartQuantity', cartQuantity);  
+        }   
+      }
+
+      function displayCartQuantity(){
+          document.querySelector('.js-cart-quantity')
+          .innerHTML = `Cart quantity: ${cartQuantity}`;
+  }
+    </script>
+  </body>
+
+</html>

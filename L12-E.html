@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>L12-E</title>
+  </head>
+  <body>
+    <button onclick="
+    document.querySelector('.js-start-button')
+      .innerHTML = 'Loading...'
+    updateButton();
+    
+      " class="js-start-button">Start</button>
+    <script>
+      const add = function(){
+        console.log(2+3);
+      };
+      add();
+      add();
+
+      function runTwice(fun){
+        fun();
+        fun();
+      }
+
+      runTwice(function(){
+        console.log('12b');
+      });
+
+      runTwice(add);
+
+      function updateButton(){
+        const changed = document.querySelector('.js-start-button');
+
+        setTimeout(function(){
+          changed.innerHTML = 'Finished'
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
